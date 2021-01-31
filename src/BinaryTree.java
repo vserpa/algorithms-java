@@ -1,5 +1,8 @@
 package src;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree {
 
   public static Node insert(Node root, int data) {
@@ -31,6 +34,23 @@ public class BinaryTree {
       return lefth + 1;
     } else {
       return righth + 1;
+    }
+  }
+
+  public static void levelOrder(Node root) {
+      
+    Queue queue = new LinkedList();
+    queue.add(root);
+    
+    while (!queue.isEmpty()) {
+      Node tempNode = (Node) queue.poll();
+      System.out.print(tempNode.data + " ");
+      
+      if (tempNode.left != null) 
+          queue.add(tempNode.left);
+      
+      if (tempNode.right != null) 
+          queue.add(tempNode.right);
     }
   }
   

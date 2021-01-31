@@ -13,6 +13,8 @@ public class Run {
 
     int height = BinaryTree.height(root);
     System.out.println(height);
+
+    BinaryTree.levelOrder(root);
   }
 
   public static ArrayList<Integer> prepareNodes() {
